@@ -47,13 +47,13 @@ size = Vector3(0.1, 5, 5)
 resource_local_to_scene = true
 size = Vector2(3, 2)
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_esdtq"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_8gay3"]
 viewport_path = NodePath("Viewport")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_q18oi"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xj77c"]
 transparency = 1
 cull_mode = 2
-albedo_texture = SubResource("ViewportTexture_esdtq")
+albedo_texture = SubResource("ViewportTexture_8gay3")
 texture_filter = 1
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_d1tft"]
@@ -73,11 +73,11 @@ shadow_enabled = true
 [node name="XROrigin3D" type="XROrigin3D" parent="."]
 unique_name_in_owner = true
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 8, 0, 0)
+script = ExtResource("2_nt30v")
 
 [node name="XRCamera3D" type="XRCamera3D" parent="XROrigin3D"]
 unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.6, 0)
-script = ExtResource("2_nt30v")
 
 [node name="LeftController" type="XRController3D" parent="XROrigin3D"]
 unique_name_in_owner = true
@@ -151,7 +151,7 @@ size = Vector2i(1152, 648)
 
 [node name="Screen" parent="Viewport2Din3D" index="1"]
 mesh = SubResource("QuadMesh_mclq0")
-surface_material_override/0 = SubResource("StandardMaterial3D_q18oi")
+surface_material_override/0 = SubResource("StandardMaterial3D_xj77c")
 
 [node name="StaticBody3D" parent="Viewport2Din3D" index="2"]
 viewport_size = Vector2(1152, 648)
