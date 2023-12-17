@@ -88,8 +88,7 @@ theme_override_styles/hover = SubResource("StyleBoxEmpty_lc6rf")
 theme_override_styles/pressed = SubResource("StyleBoxEmpty_qkut1")
 theme_override_styles/disabled = SubResource("StyleBoxEmpty_fckkt")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_ux0w5")
-text = "Mode 3
-"
+text = "Snap Turn"
 
 [connection signal="pressed" from="Control/MarginContainer/VBoxContainer/NormalBtn" to="." method="_on_normal_btn_pressed"]
 [connection signal="pressed" from="Control/MarginContainer/VBoxContainer/PassthroughBtn" to="." method="_on_passthrough_btn_pressed"]
