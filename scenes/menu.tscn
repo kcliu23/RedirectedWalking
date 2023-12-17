@@ -74,7 +74,7 @@ theme_override_styles/hover = SubResource("StyleBoxEmpty_lc6rf")
 theme_override_styles/pressed = SubResource("StyleBoxEmpty_qkut1")
 theme_override_styles/disabled = SubResource("StyleBoxEmpty_fckkt")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_ux0w5")
-text = "PassThrough
+text = "Disable Tracking
 "
 
 [node name="Mode 3 Btn" type="Button" parent="Control/MarginContainer/VBoxContainer"]
