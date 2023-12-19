@@ -10,11 +10,12 @@ Part 2: UI
 
 In an experience that uses redirected walking, developers need to determine a proper way to allow for the player to reset themselves when they physically get too close to the room boundary, but they still need to go in the direction that would lead them past the VR boundary.  To address this, we added an adapted 2D menu that allows the user to switch between 3 navigation modes: redirected walking, disabled tracking, and snap turn.  The redirected walking more uses the navigation found in part 1.  The disabled tracking causes the player to not move in VR even when they do move in physical space; this allows for the player to move themselves somewhere else in the room in physical space and then continue on in virtual space.  The 3rd method implemented was a snap turning mode.  This mode would allow for the user to rotate the world around them using snap turning, and to then re-enable the redirected walking mode to continue moving in the environment.
 
-When the user presses the ax button to toggle the menu, a 2D menu is projected that follows the tracking of the left controller.  The right controller becomes a pointer which allows for the user to select which mode they want to switch to.
+When the user presses the ax button to toggle the menu, a 2D menu is projected that follows the tracking of the left controller.  The right controller becomes a pointer which allows for the user to select (trigger_click) which mode they want to switch to.
 
 Environment
 
-Our project is done in WebXR, and makes use of Godot XR Tools for some of the XR functionality
+Our project is done in WebXR, and makes use of Godot XR Tools for some of the XR functionality. The XR Tool functions used in this environment are "FunctionPointer" and "Viewport2Din3D". "FunctionPointer" allows the 
+user to use a laser pointer to interact with the UI. When the pointer interacts with physics bodies or areas it will send a signal or call a method related to the pointer feature. "Viewport2Din3D" introduces a 2D UI into the 3D world. Simply assign a 2D scene to the function to get it rendered to the viewport and make it interactable with our pointer.
 
 ## License
 
