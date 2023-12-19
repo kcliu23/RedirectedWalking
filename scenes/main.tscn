@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://d46wrkgdeynk"]
+[gd_scene load_steps=35 format=3 uid="uid://d46wrkgdeynk"]
 
 [ext_resource type="Script" path="res://scripts/initialize-webxr.gd" id="1_m7uep"]
 [ext_resource type="Script" path="res://scripts/RDW.gd" id="2_i5gja"]
@@ -28,32 +28,83 @@ material = ExtResource("5_xy812")
 size = Vector3(0.002, 0.002, 10)
 subdivide_depth = 20
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pcvng"]
+albedo_color = Color(0.501961, 0, 0, 1)
+
 [sub_resource type="BoxMesh" id="BoxMesh_phjbh"]
+material = SubResource("StandardMaterial3D_pcvng")
 size = Vector3(20, 0.1, 5)
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_y83f3"]
+albedo_color = Color(0.25098, 0.25098, 0.25098, 1)
+
 [sub_resource type="BoxMesh" id="BoxMesh_5x43i"]
+material = SubResource("StandardMaterial3D_y83f3")
 size = Vector3(20, 5, 0.1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jhd8i"]
+albedo_color = Color(0.25098, 0.25098, 0.25098, 1)
 
 [sub_resource type="BoxMesh" id="BoxMesh_s81rl"]
+material = SubResource("StandardMaterial3D_jhd8i")
 size = Vector3(20, 5, 0.1)
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_d3w6c"]
+albedo_color = Color(0.25098, 0.25098, 0.25098, 1)
+
 [sub_resource type="BoxMesh" id="BoxMesh_4unsd"]
+material = SubResource("StandardMaterial3D_d3w6c")
 size = Vector3(0.1, 5, 5)
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kblxx"]
+albedo_color = Color(0.25098, 0.25098, 0.25098, 1)
+
 [sub_resource type="BoxMesh" id="BoxMesh_48767"]
+material = SubResource("StandardMaterial3D_kblxx")
 size = Vector3(0.1, 5, 5)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_n70d1"]
+albedo_color = Color(0.25098, 1, 1, 1)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_53uix"]
+material = SubResource("StandardMaterial3D_n70d1")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kp7aj"]
+albedo_color = Color(0.25098, 1, 0.25098, 1)
+metallic = 1.0
+metallic_specular = 0.7
+roughness = 0.48
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_8aw72"]
+material = SubResource("StandardMaterial3D_kp7aj")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6w5kn"]
+albedo_color = Color(0, 0, 0, 1)
+metallic = 1.0
+metallic_specular = 1.0
+roughness = 0.0
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_nw4aq"]
+material = SubResource("StandardMaterial3D_6w5kn")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ju6kp"]
+transparency = 1
+albedo_color = Color(1, 0, 0, 0.501961)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_msgdl"]
+material = SubResource("StandardMaterial3D_ju6kp")
 
 [sub_resource type="QuadMesh" id="QuadMesh_mclq0"]
 resource_local_to_scene = true
 size = Vector2(3, 2)
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_1khht"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_a15g2"]
 viewport_path = NodePath("Viewport")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vpsp0"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_775mf"]
 transparency = 1
 cull_mode = 2
-albedo_texture = SubResource("ViewportTexture_1khht")
+albedo_texture = SubResource("ViewportTexture_a15g2")
 texture_filter = 1
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_d1tft"]
@@ -123,6 +174,38 @@ mesh = SubResource("BoxMesh_4unsd")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 2.5, 0)
 mesh = SubResource("BoxMesh_48767")
 
+[node name="Painting1" type="MeshInstance3D" parent="Environment"]
+transform = Transform3D(4.37114e-08, 1, -8.74228e-08, 1, -4.37114e-08, 0, -3.82137e-15, -8.74228e-08, -1, -9.9, 2, 0)
+mesh = SubResource("PlaneMesh_53uix")
+
+[node name="Painting2" type="MeshInstance3D" parent="Environment"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, -5, 2, -2.4)
+mesh = SubResource("PlaneMesh_8aw72")
+
+[node name="Painting3" type="MeshInstance3D" parent="Environment"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 2, -2.4)
+mesh = SubResource("PlaneMesh_nw4aq")
+
+[node name="Painting4" type="MeshInstance3D" parent="Environment"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 5, 2, -2.4)
+mesh = SubResource("PlaneMesh_msgdl")
+
+[node name="Painting5" type="MeshInstance3D" parent="Environment"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 5, 2, 2.4)
+mesh = SubResource("PlaneMesh_8aw72")
+
+[node name="Painting6" type="MeshInstance3D" parent="Environment"]
+transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 9.9, 2, 0)
+mesh = SubResource("PlaneMesh_53uix")
+
+[node name="Painting7" type="MeshInstance3D" parent="Environment"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 2, 2.4)
+mesh = SubResource("PlaneMesh_nw4aq")
+
+[node name="Painting8" type="MeshInstance3D" parent="Environment"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -5, 2, 2.4)
+mesh = SubResource("PlaneMesh_msgdl")
+
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="Button" type="Button" parent="CanvasLayer"]
@@ -151,7 +234,7 @@ size = Vector2i(1152, 648)
 
 [node name="Screen" parent="Viewport2Din3D" index="1"]
 mesh = SubResource("QuadMesh_mclq0")
-surface_material_override/0 = SubResource("StandardMaterial3D_vpsp0")
+surface_material_override/0 = SubResource("StandardMaterial3D_775mf")
 
 [node name="StaticBody3D" parent="Viewport2Din3D" index="2"]
 viewport_size = Vector2(1152, 648)
